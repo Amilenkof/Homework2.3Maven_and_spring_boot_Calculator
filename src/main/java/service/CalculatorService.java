@@ -1,4 +1,4 @@
-package pro.homework23.sky.calculator;
+package service;
 
 public interface CalculatorService {
 
@@ -8,7 +8,7 @@ public interface CalculatorService {
 
      int multiply(int num1,int num2);
 
-     String divide(int num1,int num2);
+     double divide(int num1,int num2);
 
 
 }

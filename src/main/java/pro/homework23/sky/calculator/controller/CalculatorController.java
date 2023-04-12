@@ -1,9 +1,9 @@
-package pro.homework23.sky.calculator;
+package pro.homework23.sky.calculator.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
 
 @RestController
 @RequestMapping("/calculator")
@@ -37,6 +37,12 @@ private final CalculatorServiceImpl calculatorService;
 
     @GetMapping("/divide")
     public String divideService(@RequestParam int num1, @RequestParam int num2) {
-        return String.format("%s / %s = %s", num1, num2, calculatorService.divide(num1,num2));
+        return String.format("%s / %s = %.2f", num1, num2, calculatorService.divide(num1,num2));
     }
-}
+    @ExceptionHandler(ArithmeticException.class )
+    public ResponseEntity <String> handle() {
+        return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
+    }
+
+    }
+
