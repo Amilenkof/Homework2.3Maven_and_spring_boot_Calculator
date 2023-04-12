@@ -1,7 +1,7 @@
-package pro.homework23.sky.calculator.controller;
+package pro.homework23.sky.calculator.service;
 
 import org.springframework.stereotype.Service;
-import service.CalculatorService;
+import pro.homework23.sky.calculator.service.CalculatorService;
 
 @Service
 public class CalculatorServiceImpl implements CalculatorService {

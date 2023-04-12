@@ -1,4 +1,4 @@
-package service;
+package pro.homework23.sky.calculator.service;
 
 public interface CalculatorService {
 
